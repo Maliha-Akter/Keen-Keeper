@@ -1,10 +1,11 @@
 import React, { use } from 'react';
+import { Link } from 'react-router';
 
 const friendsPromise = fetch('/data.json').then(res => res.json());
 
 const AllFriends = () => {
     const friends = use(friendsPromise);
-    // console.log(friends, "friends")
+    console.log(friends, "friends")
     return (
         <div className="mx-auto container my-20">
             <h2 className="text-2xl font-bold pl-22">Your Friends</h2>
@@ -12,7 +13,7 @@ const AllFriends = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7 p-20">
                 {friends.map((friend, index) => (
                     <div key={index}>
-                        <div className="card bg-base-100 shadow-lg">
+                        <Link to={`cardInfoDetails/${friend.id}`} className="card bg-base-100 shadow-lg">
 
                             <figure className="px-10 pt-10 flex justify-center">
                                 <img
@@ -46,7 +47,7 @@ const AllFriends = () => {
                                     {friend.status}
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 ))}
             </div>
