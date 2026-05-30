@@ -48,7 +48,7 @@ const Navbar = () => {
             </div> */}
             <div className="hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <NavLink to={"/"} className="bg-[#244D3F] text-white flex items-center font-bold text-xl px-5 py-3 rounded-xl ml-4 gap-2 hover:bg-gray-200 hover:text-[#244D3F] transition hover:border hover:border-[#244D3F]">
+                    <NavLink to={"/"} className="text-[#64748B] flex items-center font-bold text-xl px-5 py-3 rounded-xl ml-4 gap-2 hover:bg-[#244D3F] hover:text-white transition">
                         <IoHomeOutline />
                         <span>Home</span>
                     </NavLink>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const CardTracking = () => {
     return (
-        <div className='container mx-auto flex justify-evenly items-center '>
+        <div className='container mx-auto lg:flex justify-evenly items-center space-y-4 '>
             <div className='text-center space-y-2 rounded-xl p-14 shadow-lg hover:shadow-xl transition'>
                 <h2 className='font-bold text-3xl'>10</h2>
                 <p className='text-2xl'>Total Friends</p>

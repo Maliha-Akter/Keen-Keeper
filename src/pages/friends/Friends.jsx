@@ -1,9 +1,10 @@
 import React from 'react';
+import AllFriends from '../../components/homepages/allfriends/AllFriends';
 
 const Friends = () => {
     return (
         <div>
-            Friend is here
+            <AllFriends></AllFriends>
         </div>
     );
 };
