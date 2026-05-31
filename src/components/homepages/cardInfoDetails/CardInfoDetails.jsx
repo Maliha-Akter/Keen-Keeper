@@ -19,6 +19,7 @@ const CardInfoDetails = () => {
     const {
         id,
         name,
+        email,
         picture,
         days_since_contact,
         status,
@@ -34,8 +35,8 @@ const CardInfoDetails = () => {
     
     
     return (
-        <div className="container mx-auto px-8 lg:px-40 py-10">
-            <div className="grid lg:grid-cols-3 gap-10 ">
+        <div className="container mx-auto px-8 lg:px-10 py-10">
+            <div className="grid  lg:grid-cols-4 gap-10 ">
 
                 {/* left side */}
                 <div className="space-y-4 lg:col-span-1 lg:mx-auto">
@@ -51,7 +52,7 @@ const CardInfoDetails = () => {
 
                         <div
                             className={`inline-block px-4 py-1 rounded-full text-white text-sm mt-3
-                ${status === "overdue"
+                ${status === "Overdue"
                                     ? "bg-red-500"
                                     : status === "Almost due"
                                         ? "bg-yellow-500"
@@ -77,7 +78,7 @@ const CardInfoDetails = () => {
                         </p>
 
                         <p className="text-slate-500 mt-2">
-                            Preferred: email
+                            {email}
                         </p>
                     </div>
 
@@ -99,7 +100,7 @@ const CardInfoDetails = () => {
                 </div>
 
                 {/* right side */}
-                <div className="lg:col-span-2 space-y-6">
+                <div className="lg:col-span-3 space-y-6">
 
                     {/* Stats */}
                     <div className="grid md:grid-cols-3 gap-4">

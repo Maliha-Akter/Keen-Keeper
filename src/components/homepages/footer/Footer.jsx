@@ -13,12 +13,12 @@ const Footer = () => {
           KeenKeeper
         </h1>
 
-        {/* Sub */}
+        {/* description*/}
         <p className="text-sm text-gray-200 mt-3 max-w-xl mx-auto">
           Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
         </p>
 
-        {/* Social Section */}
+        {/* Social Section part*/}
         <div className="mt-8">
           <p className="text-sm mb-3">Social Links</p>
 
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* last Part*/}
       <div className="border-t border-white/20">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-4 text-sm text-gray-200">
           
