@@ -8,6 +8,9 @@ import { FaAngleDown } from "react-icons/fa";
 const Timeline = () => {
     const { timeline } = useContext(FriendContext);
 
+    const [filterType, setFilterType] = useState("");
+    const [sortType, setSortType] = useState("");
+
     if (timeline.length === 0) {
         return (
             <div className="container mx-auto py-10 text-center font-bold text-2xl">
@@ -16,44 +19,64 @@ const Timeline = () => {
         );
     }
 
-    const [sortingType, setSortingType] = useState("");
+    const filteredTimeline =
+        filterType === ""
+            ? timeline
+            : timeline.filter(item => item.type === filterType);
+
+    const sortedTimeline = [...filteredTimeline].sort((a, b) => {
+        if (sortType === "date") {
+            return new Date(b.next_due_date) - new Date(a.next_due_date);
+        }
+        return 0;
+    });
+
     return (
         <div className="container mx-auto py-10">
             <h1 className="text-4xl font-bold mb-6">Timeline</h1>
+
+            {/* Filter dropdown*/}
             <div className="dropdown dropdown-bottom mb-6">
-                <div tabIndex={0} role="button" className="btn m-1"><span>Filtered By</span><FaAngleDown></FaAngleDown></div>
-                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li><a>Call</a></li>
-                    <li><a>Texting</a></li>
-                    <li><a>Video</a></li>
+                <div tabIndex={0} role="button" className="btn m-1">
+                    <span>Filter By</span> <FaAngleDown />
+                </div>
+
+                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow">
+                    <li onClick={() => setFilterType("")}><a>All</a></li>
+                    <li onClick={() => setFilterType("call")}><a>Call</a></li>
+                    <li onClick={() => setFilterType("text")}><a>Texting</a></li>
+                    <li onClick={() => setFilterType("video")}><a>Video</a></li>
                 </ul>
             </div>
-            <div className="space-y-4">
-                {timeline.map((item, index) => {
 
+            {/* sort dropdown */}
+            <div className="dropdown dropdown-bottom mb-6">
+                <div tabIndex={0} role="button" className="btn m-1">
+                    <span>Sort By</span> <FaAngleDown />
+                </div>
+
+                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow">
+                    <li onClick={() => setSortType("")}><a>By Default</a></li>
+                    <li onClick={() => setSortType("date")}><a>Date</a></li>
+                </ul>
+            </div>
+
+            {/* list showing */}
+            <div className="space-y-4">
+                {sortedTimeline.map((item, index) => {
                     if (item.type === "call") {
-                        return (
-                            <div key={index}>
-                                <ListedCallList customItem={item} />
-                            </div>
-                        );
+                        return <ListedCallList key={index} customItem={item} />;
                     }
 
                     if (item.type === "video") {
-                        return (
-                            <div key={index}>
-                                <ListedVideoList customItem={item} />
-                            </div>
-                        );
+                        return <ListedVideoList key={index} customItem={item} />;
                     }
 
                     if (item.type === "text") {
-                        return (
-                            <div key={index}>
-                                <ListedTextList customItem={item} />
-                            </div>
-                        );
+                        return <ListedTextList key={index} customItem={item} />;
                     }
+
+                    return null;
                 })}
             </div>
         </div>

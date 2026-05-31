@@ -1,7 +1,7 @@
 
 import TextImg from '/text.png'
 
-const ListedTextList = ({ customItem }) => {
+const ListedTextList = ({ customItem ,sortingType}) => {
   const item = customItem;
 
   return (

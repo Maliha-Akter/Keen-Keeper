@@ -1,7 +1,7 @@
 
 import { FaPhoneAlt } from "react-icons/fa";
 
-const ListedCallList = ({ customItem }) => {
+const ListedCallList = ({ customItem,sortingType }) => {
   const item = customItem;
 
   return (

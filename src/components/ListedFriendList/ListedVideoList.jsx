@@ -1,7 +1,7 @@
 
 import videoImg from '/video.png'
 
-const ListedVideoList = ({ customItem }) => {
+const ListedVideoList = ({ customItem ,sortingType}) => {
   const item = customItem;
 
   return (
