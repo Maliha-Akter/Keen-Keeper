@@ -12,6 +12,6 @@ KeenKeeper is a friendship management web application that helps users keep trac
 - React Toastify
 
 ## Key Features
-- View friend profiles and track contact status.
-- Log Call, Text, and Video interactions with timeline history.
-- Visualize communication activity using analytics charts.
+- Friend profiles and contact statuses are displayed and monitored.
+- Call, Text, and Video interactions are recorded and shown in a timeline history.
+- Communication activity is visualized through analytics charts.
