@@ -29,7 +29,7 @@ const CardInfoDetails = () => {
     } = expectedFriend;
 
 
-    const {handleCall,storedCalls} = useContext(FriendContext);
+    const {handleCall,storedCalls, storedTexts, handleText,storedVideos,handleVideo} = useContext(FriendContext);
     
     
     
@@ -161,12 +161,12 @@ const CardInfoDetails = () => {
                                 <span>Call</span>
                             </button>
 
-                            <button className="shadow-lg rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50 font-bold text-xl cursor-pointer">
+                            <button onClick={()=>handleText(expectedFriend)} className="shadow-lg rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50 font-bold text-xl cursor-pointer">
                                 <BsChatLeftText />
                                 <span>Text</span>
                             </button>
 
-                            <button className="shadow-lg rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50 font-bold text-xl cursor-pointer">
+                            <button onClick={()=>handleVideo(expectedFriend)} className="shadow-lg rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50 font-bold text-xl cursor-pointer">
                                 <HiOutlineVideoCamera size={24} />
                                 <span>Video</span>
                             </button>
