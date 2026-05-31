@@ -10,9 +10,9 @@ const AllFriends = () => {
   
     return (
         <div className="mx-auto container my-20">
-            <h2 className="text-2xl font-bold pl-22">Your Friends</h2>
+            <h2 className="text-2xl font-bold md:pl-22 md:text-left text-center">Your Friends</h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7 p-20">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 p-20">
                 {friends.map((friend, index) => (
                     <div key={index}>
                         <Link to={`cardInfoDetails/${friend.id}`} className="card bg-base-100 shadow-lg">

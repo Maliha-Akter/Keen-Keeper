@@ -1,5 +1,6 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext,  useState } from 'react';
 import { toast } from 'react-toastify';
+import { addCallListToLocalDB, getAllCallListFromLocalDB } from '../utils/localDb';
 
 export const FriendContext = createContext();
 const FriendProvider = ({ children }) => {
@@ -8,6 +9,12 @@ const FriendProvider = ({ children }) => {
     const [storedTexts, setStoredTexts] = useState([]);
     const [storedVideos, setStoredVideos] = useState([]);
     const [timeline, setTimeline] = useState([]);
+
+    // useEffect(()=>{
+    //   const getCallListFromLocalDB = getAllCallListFromLocalDB();
+    //   console.log(getCallListFromLocalDB);
+    //   setStoredCalls(getCallListFromLocalDB)
+    // }, [])
 
     const handleCall = (currentCall) => {
         const isExistInTextList = storedTexts.find((text) => text.id === currentCall.id);
@@ -20,6 +27,8 @@ const FriendProvider = ({ children }) => {
             toast.error(`${currentCall.name} is already in Video Call`);
             return;
         }
+
+        // addCallListToLocalDB(currentCall);
         //   step-1 store id or object
         //  step-2 where to store
         //  step-3: array or collection

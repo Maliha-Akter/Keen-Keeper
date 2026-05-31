@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaFacebook, FaXTwitter } from "react-icons/fa6";
+import { FaYoutube, FaFacebook, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -22,9 +22,9 @@ const Footer = () => {
         <div className="mt-8">
           <p className="text-sm mb-3">Social Links</p>
 
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 flex-wrap">
             <a className="bg-white text-[#244D3F] p-2 rounded-full hover:scale-110 transition">
-              <FaGithub />
+              <FaYoutube />
             </a>
 
             <a className="bg-white text-[#244D3F] p-2 rounded-full hover:scale-110 transition">
@@ -45,9 +45,9 @@ const Footer = () => {
           <p>© 2026 KeenKeeper. All rights reserved.</p>
 
           <div className="flex gap-6 mt-2 md:mt-0">
-            <a className="hover:underline">Privacy Policy</a>
-            <a className="hover:underline">Terms of Service</a>
-            <a className="hover:underline">Cookies</a>
+            <a className="hover:underline cursor-pointer">Privacy Policy</a>
+            <a className="hover:underline cursor-pointer">Terms of Service</a>
+            <a className="hover:underline cursor-pointer">Cookies</a>
           </div>
 
         </div>

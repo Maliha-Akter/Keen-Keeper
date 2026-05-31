@@ -37,8 +37,8 @@ const CardInfoDetails = () => {
         <div className="container mx-auto px-8 lg:px-40 py-10">
             <div className="grid lg:grid-cols-3 gap-10 ">
 
-                {/* LEFT SIDE */}
-                <div className="space-y-4 lg:col-span-1">
+                {/* left side */}
+                <div className="space-y-4 lg:col-span-1 lg:mx-auto">
                     {/* Profile Card */}
                     <div className="bg-white rounded-xl shadow-md p-6 text-center">
                         <img
@@ -98,7 +98,7 @@ const CardInfoDetails = () => {
                     </button>
                 </div>
 
-                {/* RIGHT SIDE */}
+                {/* right side */}
                 <div className="lg:col-span-2 space-y-6">
 
                     {/* Stats */}

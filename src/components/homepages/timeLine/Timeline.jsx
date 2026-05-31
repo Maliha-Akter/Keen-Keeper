@@ -32,11 +32,12 @@ const Timeline = () => {
     });
 
     return (
-        <div className="container mx-auto py-10">
-            <h1 className="text-4xl font-bold mb-6">Timeline</h1>
+        <div className="container mx-auto py-10 ">
+            <h1 className="text-4xl text-center md:text-left font-bold mb-6">Timeline</h1>
 
-            {/* Filter dropdown*/}
-            <div className="dropdown dropdown-bottom mb-6">
+            <div className="text-center md:text-left">
+                {/* Filter dropdown*/}
+            <div className="dropdown dropdown-bottom mb-6 ">
                 <div tabIndex={0} role="button" className="btn m-1">
                     <span>Filter By</span> <FaAngleDown />
                 </div>
@@ -48,7 +49,6 @@ const Timeline = () => {
                     <li onClick={() => setFilterType("video")}><a>Video</a></li>
                 </ul>
             </div>
-
             {/* sort dropdown */}
             <div className="dropdown dropdown-bottom mb-6">
                 <div tabIndex={0} role="button" className="btn m-1">
@@ -60,9 +60,10 @@ const Timeline = () => {
                     <li onClick={() => setSortType("date")}><a>Date</a></li>
                 </ul>
             </div>
+            </div>
 
             {/* list showing */}
-            <div className="space-y-4">
+            <div className="space-y-4 px-10 md:px-5">
                 {sortedTimeline.map((item, index) => {
                     if (item.type === "call") {
                         return <ListedCallList key={index} customItem={item} />;
