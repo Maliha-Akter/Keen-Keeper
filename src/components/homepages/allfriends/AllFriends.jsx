@@ -6,6 +6,7 @@ const friendsPromise = fetch('/data.json').then(res => res.json());
 const AllFriends = () => {
     const friends = use(friendsPromise);
     console.log(friends, "friends")
+  
     return (
         <div className="mx-auto container my-20">
             <h2 className="text-2xl font-bold pl-22">Your Friends</h2>

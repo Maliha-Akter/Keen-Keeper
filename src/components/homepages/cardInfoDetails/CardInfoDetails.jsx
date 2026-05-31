@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { RiNotificationSnoozeLine } from "react-icons/ri";
-import { FaArchive, FaPhoneAlt } from "react-icons/fa";
+import { FaArchive } from "react-icons/fa";
 import { RiDeleteBin6Fill } from "react-icons/ri";
-import { MdOutlineMessage } from "react-icons/md";
 import { HiOutlineVideoCamera } from "react-icons/hi";
+import { MdOutlineWifiCalling3 } from "react-icons/md";
+import { BsChatLeftText } from "react-icons/bs";
+import { FriendContext } from "../../../context/FriendContext";
 
 const CardInfoDetails = () => {
     const { FriendId } = useParams();
     const friends = useLoaderData();
 
-    const friend = friends.find(
+    const expectedFriend = friends.find(
         (friend) => friend.id === Number(FriendId)
     );
 
     const {
+        id,
         name,
         picture,
         days_since_contact,
@@ -23,8 +26,13 @@ const CardInfoDetails = () => {
         bio,
         goal,
         next_due_date,
-    } = friend;
+    } = expectedFriend;
 
+
+    const {handleCall,storedCalls} = useContext(FriendContext);
+    
+    
+    
     return (
         <div className="container mx-auto px-8 lg:px-40 py-10">
             <div className="grid lg:grid-cols-3 gap-10 ">
@@ -74,17 +82,17 @@ const CardInfoDetails = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <button className="w-full bg-white rounded-lg shadow-md py-5 flex items-center justify-center gap-2 hover:bg-gray-50">
+                    <button className="w-full bg-white rounded-lg shadow-md py-5 flex items-center justify-center gap-2 hover:bg-green-100 cursor-pointer">
                         <RiNotificationSnoozeLine />
                         Snooze 2 Weeks
                     </button>
 
-                    <button className="w-full bg-white rounded-lg shadow-md py-5 flex items-center justify-center gap-2 hover:bg-gray-50">
+                    <button className="w-full bg-white rounded-lg shadow-md py-5 flex items-center justify-center gap-2 hover:bg-green-100 cursor-pointer">
                         <FaArchive />
                         Archive
                     </button>
 
-                    <button className="w-full bg-white rounded-lg shadow-md py-5 flex items-center justify-center gap-2 text-red-500 hover:bg-red-50">
+                    <button className="w-full bg-white rounded-lg shadow-md py-5 flex items-center justify-center gap-2 text-red-500 hover:bg-red-50 cursor-pointer">
                         <RiDeleteBin6Fill />
                         Delete
                     </button>
@@ -148,17 +156,17 @@ const CardInfoDetails = () => {
                         </h3>
 
                         <div className="grid md:grid-cols-3 gap-4">
-                            <button className="rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50 shadow-lg">
-                                <FaPhoneAlt size={24} />
+                            <button className="rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50 shadow-lg font-bold text-xl cursor-pointer" onClick={()=>handleCall(expectedFriend)}>
+                                <MdOutlineWifiCalling3 />
                                 <span>Call</span>
                             </button>
 
-                            <button className="shadow-lg rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50">
-                                <MdOutlineMessage size={24} />
+                            <button className="shadow-lg rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50 font-bold text-xl cursor-pointer">
+                                <BsChatLeftText />
                                 <span>Text</span>
                             </button>
 
-                            <button className="shadow-lg rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50">
+                            <button className="shadow-lg rounded-xl py-8 flex flex-col items-center gap-2 hover:bg-gray-50 font-bold text-xl cursor-pointer">
                                 <HiOutlineVideoCamera size={24} />
                                 <span>Video</span>
                             </button>
