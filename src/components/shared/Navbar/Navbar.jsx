@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import navImg from '/navImg.png'
 import { Link, NavLink } from 'react-router';
 import { IoHomeOutline } from "react-icons/io5";

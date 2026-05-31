@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import  { useContext } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { RiNotificationSnoozeLine } from "react-icons/ri";
 import { FaArchive } from "react-icons/fa";
@@ -133,7 +133,7 @@ const CardInfoDetails = () => {
 
                     {/* Relationship Goal */}
                     <div className="bg-white rounded-xl shadow-md px-10 py-17">
-                        <div className="flex justify-between items-center">
+                        <div className="flex flex-col md:flex-row justify-between items-center">
                             <h3 className="text-2xl font-semibold text-[#244D3F]">
                                 Relationship Goal
                             </h3>
@@ -143,7 +143,7 @@ const CardInfoDetails = () => {
                             </button>
                         </div>
 
-                        <p className="text-slate-600 mt-4 text-lg">
+                        <p className="text-slate-600 text-center md:text-left mt-4 text-lg">
                             Connect every{" "}
                             <span className="font-bold">{goal} days</span>
                         </p>

@@ -3,9 +3,9 @@ import { FaYoutube, FaFacebook, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#244D3F] text-white mt-20">
+    <footer className="bg-[#244D3F] text-white mt-20 container mx-auto">
       
-      {/* Main Section */}
+      {/* Main Part*/}
       <div className="container mx-auto text-center py-16 px-4">
         
         {/* Title */}
@@ -13,7 +13,7 @@ const Footer = () => {
           KeenKeeper
         </h1>
 
-        {/* Subtitle */}
+        {/* Sub */}
         <p className="text-sm text-gray-200 mt-3 max-w-xl mx-auto">
           Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
         </p>

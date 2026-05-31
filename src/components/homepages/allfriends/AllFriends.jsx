@@ -1,16 +1,22 @@
-import React, { use } from 'react';
+import { use } from 'react';
 import { Link } from 'react-router';
 
 
-const friendsPromise = fetch('/data.json').then(res => res.json());
+const friendsPromise = fetch('/data.json')
+    .then(res => res.json())
+    .then(data =>
+        new Promise(resolve =>
+            setTimeout(() => resolve(data), 3500)
+        )
+    );
 
 const AllFriends = () => {
     const friends = use(friendsPromise);
     console.log(friends, "friends")
-  
+
     return (
-        <div className="mx-auto container my-20">
-            <h2 className="text-2xl font-bold md:pl-22 md:text-left text-center">Your Friends</h2>
+        <div className="mx-auto container my-1">
+            <h2 className="text-2xl mt-10 font-bold md:pl-22 md:text-left text-center">Your Friends</h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 p-20">
                 {friends.map((friend, index) => (
@@ -39,9 +45,9 @@ const AllFriends = () => {
 
                                 <div
                                     className={`px-3 py-1 rounded-full text-white text-sm font-semibold w-fit
-              ${friend.status === "overdue"
+              ${friend.status === "Overdue"
                                             ? "bg-red-500"
-                                            : friend.status === "almost due"
+                                            : friend.status === "Almost Due"
                                                 ? "bg-yellow-500"
                                                 : "bg-green-500"
                                         }`}

@@ -1,6 +1,5 @@
 import React, { createContext,  useState } from 'react';
 import { toast } from 'react-toastify';
-import { addCallListToLocalDB, getAllCallListFromLocalDB } from '../utils/localDb';
 
 export const FriendContext = createContext();
 const FriendProvider = ({ children }) => {

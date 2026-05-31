@@ -1,9 +1,10 @@
 
 import { FaPhoneAlt } from "react-icons/fa";
 
-const ListedCallList = ({ customItem,sortingType }) => {
+const ListedCallList = ({ customItem }) => {
   const item = customItem;
 
+  
   return (
     <div className="space-y-4">
       <div className="bg-white p-4 rounded-lg border shadow-sm">

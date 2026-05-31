@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
 import { Link } from "react-router";
 
 const ErrorPage = ({ error, reset }) => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 via-white to-red-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-red-50 via-white to-red-100 px-4">
       <div className="max-w-md w-full bg-white shadow-xl rounded-2xl p-8 text-center border border-red-100">
         
         {/* Icon */}

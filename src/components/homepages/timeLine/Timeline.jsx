@@ -13,7 +13,7 @@ const Timeline = () => {
 
     if (timeline.length === 0) {
         return (
-            <div className="container mx-auto py-10 text-center font-bold text-2xl">
+            <div className="container mx-auto mt-10 text-center font-bold text-2xl pt-20 pb-20 md:pt-30 md:pb-30 bg-green-200">
                 No History in Timeline
             </div>
         );
@@ -24,7 +24,20 @@ const Timeline = () => {
             ? timeline
             : timeline.filter(item => item.type === filterType);
 
+    // if (filteredTimeline.length === 0) {
+    //     return (
+    //         <div className="container mx-auto py-10">
+    //             <h1 className="text-4xl font-bold mb-6">Timeline</h1>
+
+    //             <div className="text-center py-20 bg-green-100 rounded-lg">
+    //                 No {filterType} history found
+    //             </div>
+    //         </div>
+    //     );
+    // }
+
     const sortedTimeline = [...filteredTimeline].sort((a, b) => {
+
         if (sortType === "date") {
             return new Date(b.next_due_date) - new Date(a.next_due_date);
         }
@@ -37,29 +50,29 @@ const Timeline = () => {
 
             <div className="text-center md:text-left">
                 {/* Filter dropdown*/}
-            <div className="dropdown dropdown-bottom mb-6 ">
-                <div tabIndex={0} role="button" className="btn m-1">
-                    <span>Filter By</span> <FaAngleDown />
-                </div>
+                <div className="dropdown dropdown-bottom mb-6 ">
+                    <div tabIndex={0} role="button" className="btn m-1">
+                        <span>Filter By</span> <FaAngleDown />
+                    </div>
 
-                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow">
-                    <li onClick={() => setFilterType("")}><a>All</a></li>
-                    <li onClick={() => setFilterType("call")}><a>Call</a></li>
-                    <li onClick={() => setFilterType("text")}><a>Texting</a></li>
-                    <li onClick={() => setFilterType("video")}><a>Video</a></li>
-                </ul>
-            </div>
-            {/* sort dropdown */}
-            <div className="dropdown dropdown-bottom mb-6">
-                <div tabIndex={0} role="button" className="btn m-1">
-                    <span>Sort By</span> <FaAngleDown />
+                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow">
+                        <li onClick={() => setFilterType("")}><a>All</a></li>
+                        <li onClick={() => setFilterType("call")}><a>Call</a></li>
+                        <li onClick={() => setFilterType("text")}><a>Texting</a></li>
+                        <li onClick={() => setFilterType("video")}><a>Video</a></li>
+                    </ul>
                 </div>
+                {/* sort dropdown */}
+                <div className="dropdown dropdown-bottom mb-6">
+                    <div tabIndex={0} role="button" className="btn m-1">
+                        <span>Sort By</span> <FaAngleDown />
+                    </div>
 
-                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow">
-                    <li onClick={() => setSortType("")}><a>By Default</a></li>
-                    <li onClick={() => setSortType("date")}><a>Date</a></li>
-                </ul>
-            </div>
+                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow">
+                        <li onClick={() => setSortType("")}><a>By Default</a></li>
+                        <li onClick={() => setSortType("date")}><a>Date</a></li>
+                    </ul>
+                </div>
             </div>
 
             {/* list showing */}
