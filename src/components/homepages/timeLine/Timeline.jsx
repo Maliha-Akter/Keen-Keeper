@@ -45,7 +45,7 @@ const Timeline = () => {
     });
 
     return (
-        <div className="container mx-auto py-10 ">
+        <div className="container mx-auto py-10 pl-10">
             <h1 className="text-4xl text-center md:text-left font-bold mb-6">Timeline</h1>
 
             <div className="text-center md:text-left">

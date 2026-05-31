@@ -6,9 +6,9 @@ const CardTracking = () => {
     const friends = use(friendsPromise);
     console.log(friends, "friends");
 
-    const onTrack = friends.filter((friend) => friend.status == "on-track").length;
+    const onTrack = friends.filter((friend) => friend.status == "On-Track").length;
     // const almostDue = friends.filter((friend) => friend.status == "almost due").length;
-    const overdue = friends.filter((friend) => friend.status == "overdue").length;
+    const overdue = friends.filter((friend) => friend.status == "Overdue").length;
     const interactionsThisMonth = friends.filter(
         friend => friend.days_since_contact <= 30
     ).length;
