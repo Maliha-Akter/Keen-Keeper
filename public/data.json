@@ -9,7 +9,7 @@
     "tags": ["university", "close friend"],
     "bio": "Met during first year of university. We often study and play cricket together.",
     "goal": 7,
-    "next_due_date": "2026-06-05"
+    "next_due_date": "June 5, 2026"
   },
   {
     "id": 2,
@@ -21,11 +21,11 @@
     "tags": ["college", "project partner"],
     "bio": "Worked together on multiple CSE projects and hackathons.",
     "goal": 14,
-    "next_due_date": "2026-06-10"
+    "next_due_date": "June 10, 2026"
   },
   {
     "id": 3,
-     "name": "Nusrat Jahan",
+    "name": "Nusrat Jahan",
     "picture": "https://i.ibb.co.com/My1Cg030/friend-3.jpg",
     "email": "tanvir.ahmed@example.com",
     "days_since_contact": 78,
@@ -33,7 +33,7 @@
     "tags": ["school friend", "childhood"],
     "bio": "Best friend from school days. We used to play football every afternoon.",
     "goal": 14,
-    "next_due_date": "2026-05-20"
+    "next_due_date": "May 20, 2026"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "tags": ["classmate", "study group"],
     "bio": "Study group partner during final semester exams.",
     "goal": 10,
-    "next_due_date": "2026-06-08"
+    "next_due_date": "June 8, 2026"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "tags": ["work friend", "freelancing"],
     "bio": "Met on a freelance project and stayed in touch since.",
     "goal": 14,
-    "next_due_date": "2026-06-01"
+    "next_due_date": "June 1, 2026"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "tags": ["university", "lab partner"],
     "bio": "Lab partner in networking course. Always helpful and supportive.",
     "goal": 14,
-    "next_due_date": "2026-05-25"
+    "next_due_date": "May 25, 2026"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "tags": ["gym friend", "fitness"],
     "bio": "Gym buddy who motivates me to stay consistent.",
     "goal": 7,
-    "next_due_date": "2026-06-03"
+    "next_due_date": "June 3, 2026"
   },
   {
     "id": 8,
@@ -93,11 +93,11 @@
     "tags": ["cousin", "family"],
     "bio": "Close cousin, we talk about studies and career plans often.",
     "goal": 10,
-    "next_due_date": "2026-06-09"
+    "next_due_date": "June 9, 2026"
   },
   {
     "id": 9,
-    "name": "Ayesha Siddika", 
+    "name": "Ayesha Siddika",
     "picture": "https://i.ibb.co.com/5gHq1sp2/friend-9.jpg",
     "email": "mehedi.hasan@example.com",
     "days_since_contact": 16,
@@ -105,7 +105,7 @@
     "tags": ["college", "tech club"],
     "bio": "Member of the same programming club in university.",
     "goal": 14,
-    "next_due_date": "2026-05-28"
+    "next_due_date": "May 28, 2026"
   },
   {
     "id": 10,
@@ -117,7 +117,7 @@
     "tags": ["school friend", "long distance"],
     "bio": "Old school friend now living abroad, still regularly connected.",
     "goal": 10,
-    "next_due_date": "2026-06-07"
+    "next_due_date": "June 7, 2026"
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@
     "tags": ["office", "colleague"],
     "bio": "Colleague from internship at a software company.",
     "goal": 14,
-    "next_due_date": "2026-06-02"
+    "next_due_date": "June 2, 2026"
   },
   {
     "id": 12,
@@ -141,6 +141,6 @@
     "tags": ["mentor", "career guide"],
     "bio": "Senior mentor who guided me in cybersecurity learning path.",
     "goal": 14,
-    "next_due_date": "2026-05-22"
+    "next_due_date": "May 22, 2026"
   }
 ]

@@ -87,7 +87,7 @@ const Navbar = () => {
                     </NavLink>
 
                     <NavLink
-                        to="/friends"
+                        to="/timeLine"
                         className={({ isActive }) =>
                             `flex items-center gap-2 font-bold text-xl ml-4 px-5 py-3 rounded-xl transition ${isActive
                                 ? "bg-[#244D3F] text-white"

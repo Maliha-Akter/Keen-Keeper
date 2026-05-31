@@ -7,15 +7,16 @@ const FriendProvider = ({ children }) => {
     const [storedCalls, setStoredCalls] = useState([]);
     const [storedTexts, setStoredTexts] = useState([]);
     const [storedVideos, setStoredVideos] = useState([]);
+    const [timeline, setTimeline] = useState([]);
 
     const handleCall = (currentCall) => {
-        const isExistInTextList = storedTexts.find((text)=> text.id === currentCall.id);
-        if(isExistInTextList){
+        const isExistInTextList = storedTexts.find((text) => text.id === currentCall.id);
+        if (isExistInTextList) {
             toast.error(`${currentCall.name} is already in Text`);
             return;
         }
-        const isExistInVideoList = storedVideos.find((video)=> video.id === currentCall.id);
-        if(isExistInVideoList){
+        const isExistInVideoList = storedVideos.find((video) => video.id === currentCall.id);
+        if (isExistInVideoList) {
             toast.error(`${currentCall.name} is already in Video Call`);
             return;
         }
@@ -31,19 +32,24 @@ const FriendProvider = ({ children }) => {
         }
         else {
             toast.success(`Call With ${currentCall.name} Added`);
-            setStoredCalls([...storedCalls, currentCall])
+            setStoredCalls([...storedCalls, currentCall]);
+
+            setTimeline(prev => [
+                ...prev,
+                { ...currentCall, type: "call" }
+            ]);
         }
 
     }
     const handleText = (currentText) => {
 
-        const isExistInCallList = storedCalls.find((call)=> call.id === currentText.id);
-        if(isExistInCallList){
+        const isExistInCallList = storedCalls.find((call) => call.id === currentText.id);
+        if (isExistInCallList) {
             toast.error(`${currentText.name} is already in call`);
             return;
         }
-        const isExistInVideoList = storedVideos.find((video)=> video.id === currentText.id);
-        if(isExistInVideoList){
+        const isExistInVideoList = storedVideos.find((video) => video.id === currentText.id);
+        if (isExistInVideoList) {
             toast.error(`${currentText.name} is already in Video Call`);
             return;
         }
@@ -59,18 +65,23 @@ const FriendProvider = ({ children }) => {
         }
         else {
             toast.success(`Text With ${currentText.name} Added`);
-            setStoredTexts([...storedTexts, currentText])
+            setStoredTexts([...storedTexts, currentText]);
+
+            setTimeline(prev => [
+                ...prev,
+                { ...currentText, type: "text" }
+            ]);
         }
 
     }
     const handleVideo = (currentVideo) => {
-        const isExistInCallList = storedCalls.find((call)=> call.id === currentVideo.id);
-        if(isExistInCallList){
+        const isExistInCallList = storedCalls.find((call) => call.id === currentVideo.id);
+        if (isExistInCallList) {
             toast.error(`${currentVideo.name} is already in call`);
             return;
         }
-        const isExistInTextList = storedTexts.find((text)=> text.id === currentVideo.id);
-        if(isExistInTextList){
+        const isExistInTextList = storedTexts.find((text) => text.id === currentVideo.id);
+        if (isExistInTextList) {
             toast.error(`${currentVideo.name} is already in Text`);
             return;
         }
@@ -86,7 +97,12 @@ const FriendProvider = ({ children }) => {
         }
         else {
             toast.success(`Video Call With ${currentVideo.name} Added`);
-            setStoredVideos([...storedVideos, currentVideo])
+            setStoredVideos([...storedVideos, currentVideo]);
+
+            setTimeline(prev => [
+                ...prev,
+                { ...currentVideo, type: "video" }
+            ]);
         }
 
     }
@@ -94,7 +110,8 @@ const FriendProvider = ({ children }) => {
     const data = {
         storedCalls, setStoredCalls, handleCall,
         storedTexts, setStoredTexts, handleText,
-        storedVideos,setStoredVideos,handleVideo,
+        storedVideos, setStoredVideos, handleVideo,
+        timeline,
     }
     return <FriendContext.Provider value={data}>
         {children}

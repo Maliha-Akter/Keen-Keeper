@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { Link } from 'react-router';
 
+
 const friendsPromise = fetch('/data.json').then(res => res.json());
 
 const AllFriends = () => {
